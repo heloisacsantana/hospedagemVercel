@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Heloisa Campos</title>
+    <!-- Google Fonts: Inter para um visual moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Section */
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .card-footer i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-footer i {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            margin-top: auto;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Meus Projetos</h1>
+        <p>Aqui estão alguns dos projetos que desenvolvi, incluindo aplicações web e pesquisas realizadas durante meu aprendizado.</p>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <!-- Link 1 -->
+            <a href="https://drive.google.com/file/d/1bhABDdC7YqMm3dS7kcBFmMnIR4G559OM/view" target="_blank" class="card">
+                <div>
+                    <div class="card-icon"><i class="fab fa-php"></i></div>
+                    <h2 class="card-title">Pesquisa PHP</h2>
+                    <p class="card-description">Documento detalhado sobre a linguagem PHP, suas funcionalidades e aplicações no desenvolvimento web moderno.</p>
+                </div>
+                <div class="card-footer">
+                    Acessar Arquivo <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <!-- Link 2 -->
+            <a href="https://produtosest.infinityfreeapp.com/crud/post.php?i=1" target="_blank" class="card">
+                <div>
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <h2 class="card-title">Hospedagem PHP (Link 1)</h2>
+                    <p class="card-description">Aplicação CRUD desenvolvida em PHP e hospedada no InfinityFree para gerenciamento de produtos.</p>
+                </div>
+                <div class="card-footer">
+                    Ver Projeto <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <!-- Link 3 -->
+            <a href="https://produtosest.infinityfreeapp.com/avaliacoes/post.php" target="_blank" class="card">
+                <div>
+                    <div class="card-icon"><i class="fas fa-star"></i></div>
+                    <h2 class="card-title">Hospedagem PHP (Link 2)</h2>
+                    <p class="card-description">Sistema de avaliações integrado, demonstrando interações dinâmicas com banco de dados via PHP.</p>
+                </div>
+                <div class="card-footer">
+                    Ver Projeto <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <!-- Link 4 -->
+            <a href="https://heloisacsantana.github.io/localStorage/" target="_blank" class="card">
+                <div>
+                    <div class="card-icon"><i class="fas fa-list-check"></i></div>
+                    <h2 class="card-title">Lista de Tarefas (TO DO)</h2>
+                    <p class="card-description">Aplicação funcional de lista de tarefas utilizando JavaScript puro e LocalStorage para persistência de dados.</p>
+                </div>
+                <div class="card-footer">
+                    Acessar GitHub <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <!-- Link 5 -->
+            <a href="https://drive.google.com/file/d/1s7SgkYWI8S2Jky-ridEYauyOfztXQon0/view" target="_blank" class="card">
+                <div>
+                    <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h2 class="card-title">Pesquisa: Requisições HTTP</h2>
+                    <p class="card-description">Estudo aprofundado sobre o funcionamento de requisições HTTP, métodos, cabeçalhos e fluxos de comunicação.</p>
+                </div>
+                <div class="card-footer">
+                    Acessar Arquivo <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Todos os direitos reservados a Heloisa Campos</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Desenvolvido com HTML, CSS e JavaScript</p>
+    </footer>
+
+    <script>
+        // Pequena interação de log para confirmar carregamento
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Hub de Projetos carregado com sucesso!');
+            
+            // Adicionando um efeito de clique suave (opcional UX)
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                card.addEventListener('mouseup', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
